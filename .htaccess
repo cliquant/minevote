@@ -1,0 +1,11 @@
+Options -Indexes
+RewriteEngine ON
+
+RewriteCond %{HTTP_USER_AGENT} libwww-perl.* 
+RewriteRule .* – [F,L]
+
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L] 
+RewriteRule ^$ index.php [QSA,L]
